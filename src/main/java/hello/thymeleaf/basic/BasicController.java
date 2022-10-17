@@ -90,6 +90,7 @@ public class BasicController {
     @GetMapping("/literal")
     public String literal(Model model) {
         model.addAttribute("data", "Spring!");
+
         return "basic/literal";
     }
 
@@ -99,4 +100,11 @@ public class BasicController {
         model.addAttribute("data", "Spring!");
         return "basic/operation";
     }
+
+    @GetMapping("/attribute")
+    public String attribute() {
+
+        return "basic/attribute";
+    }
+
 }
