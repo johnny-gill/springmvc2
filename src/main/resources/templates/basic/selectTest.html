@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<select name="category" id="category1"></select>
+<select name="category" id="category2"></select>
+<select name="category" id="category3"></select>
+<select name="category" id="category4"></select>
+</body>
+</html>
+
+<script>
+var jsonData = 	JSON.parse('[{"wholeCategoryName":"패션의류","id":"50000000","name":"패션의류","last":false},{"wholeCategoryName":"패션의류>여성의류","id":"50000167","name":"여성의류","last":false},{"wholeCategoryName":"패션의류>여성의류>니트/스웨터","id":"50000805","name":"니트/스웨터","last":true},{"wholeCategoryName":"패션의류>여성의류>카디건","id":"50000806","name":"카디건","last":true},{"wholeCategoryName":"패션의류>여성의류>원피스","id":"50000807","name":"원피스","last":true},{"wholeCategoryName":"패션의류>여성의류>티셔츠","id":"50000803","name":"티셔츠","last":true},{"wholeCategoryName":"패션의류>여성의류>블라우스/셔츠","id":"50000804","name":"블라우스/셔츠","last":true},{"wholeCategoryName":"패션의류>여성의류>점퍼","id":"50000814","name":"점퍼","last":true},{"wholeCategoryName":"패션의류>여성의류>재킷","id":"50000815","name":"재킷","last":true},{"wholeCategoryName":"패션의류>여성의류>코트","id":"50000813","name":"코트","last":true},{"wholeCategoryName":"패션의류>여성의류>바지","id":"50000810","name":"바지","last":true},{"wholeCategoryName":"패션의류>여성의류>청바지","id":"50000809","name":"청바지","last":true},{"wholeCategoryName":"패션의류>여성의류>스커트","id":"50000808","name":"스커트","last":true},{"wholeCategoryName":"패션의류>여성의류>레깅스","id":"50000812","name":"레깅스","last":true},{"wholeCategoryName":"패션의류>여성의류>트레이닝복","id":"50000818","name":"트레이닝복","last":true},{"wholeCategoryName":"패션의류>여성의류>조끼","id":"50000817","name":"조끼","last":true},{"wholeCategoryName":"패션의류>여성의류>정장세트","id":"50000816","name":"정장세트","last":true},{"wholeCategoryName":"패션의류>여성의류>한복","id":"50000819","name":"한복","last":true},{"wholeCategoryName":"패션의류>여성의류>유니폼/단체복","id":"50000821","name":"유니폼/단체복","last":true},{"wholeCategoryName":"패션의류>여성의류>파티복","id":"50000820","name":"파티복","last":true},{"wholeCategoryName":"패션의류>여성의류>레인코트","id":"50000822","name":"레인코트","last":true},{"wholeCategoryName":"패션의류>여성의류>점프슈트","id":"50000811","name":"점프슈트","last":true},{"wholeCategoryName":"패션의류>여성의류>코디세트","id":"50000778","name":"코디세트","last":true},{"wholeCategoryName":"패션의류>여성언더웨어/잠옷","id":"50000168","name":"여성언더웨어/잠옷","last":false},{"wholeCategoryName":"패션의류>여성언더웨어/잠옷>브라","id":"50000823","name":"브라","last":true},{"wholeCategoryName":"패션의류>여성언더웨어/잠옷>팬티","id":"50000824","name":"팬티","last":true},{"wholeCategoryName":"패션의류>여성언더웨어/잠옷>브라팬티세트","id":"50000825","name":"브라팬티세트","last":true},{"wholeCategoryName":"패션의류>여성언더웨어/잠옷>잠옷/홈웨어","id":"50000826","name":"잠옷/홈웨어","last":true},{"wholeCategoryName":"패션의류>여성언더웨어/잠옷>시즌성내의","id":"50001453","name":"시즌성내의","last":false},{"wholeCategoryName":"패션의류>여성언더웨어/잠옷>시즌성내의>내복","id":"50003632","name":"내복","last":true},{"wholeCategoryName":"패션의류>여성언더웨어/잠옷>시즌성내의>힙워머","id":"50003634","name":"힙워머","last":true},{"wholeCategoryName":"패션의류>여성언더웨어/잠옷>시즌성내의>모시메리","id":"50003635","name":"모시메리","last":true},{"wholeCategoryName":"패션의류>여성언더웨어/잠옷>보정속옷","id":"50001452","name":"보정속옷","last":false},{"wholeCategoryName":"패션의류>여성언더웨어/잠옷>보정속옷>니퍼/복대","id":"50003624","name":"니퍼/복대","last":true},{"wholeCategoryName":"패션의류>여성언더웨어/잠옷>보정속옷>코르셋","id":"50003625","name":"코르셋","last":true},{"wholeCategoryName":"패션의류>여성언더웨어/잠옷>보정속옷>올인원/바디쉐이퍼","id":"50003626","name":"올인원/바디쉐이퍼","last":true},{"wholeCategoryName":"패션의류>여성언더웨어/잠옷>보정속옷>거들","id":"50003627","name":"거들","last":true},{"wholeCategoryName":"패션의류>여성언더웨어/잠옷>보정속옷>보정속옷세트","id":"50003630","name":"보정속옷세트","last":true},{"wholeCategoryName":"패션의류>여성언더웨어/잠옷>보정속옷>기타보정속옷","id":"50003631","name":"기타보정속옷","last":true},{"wholeCategoryName":"패션의류>여성언더웨어/잠옷>슬립","id":"50000827","name":"슬립","last":true},{"wholeCategoryName":"패션의류>여성언더웨어/잠옷>러닝/캐미솔","id":"50000828","name":"러닝/캐미솔","last":true},{"wholeCategoryName":"패션의류>여성언더웨어/잠옷>속치마/속바지","id":"50000829","name":"속치마/속바지","last":true},{"wholeCategoryName":"패션의류>여성언더웨어/잠옷>언더웨어소품","id":"50001454","name":"언더웨어소품","last":false},{"wholeCategoryName":"패션의류>여성언더웨어/잠옷>언더웨어소품>가터벨트","id":"50003636","name":"가터벨트","last":true},{"wholeCategoryName":"패션의류>여성언더웨어/잠옷>언더웨어소품>브라끈","id":"50003637","name":"브라끈","last":true},{"wholeCategoryName":"패션의류>여성언더웨어/잠옷>언더웨어소품>브라패드","id":"50003638","name":"브라패드","last":true},{"wholeCategoryName":"패션의류>여성언더웨어/잠옷>언더웨어소품>땀패드","id":"50003639","name":"땀패드","last":true},{"wholeCategoryName":"패션의류>여성언더웨어/잠옷>언더웨어소품>기타언더웨어소품","id":"50003816","name":"기타언더웨어소품","last":true},{"wholeCategoryName":"패션의류>남성의류","id":"50000169","name":"남성의류","last":false},{"wholeCategoryName":"패션의류>남성의류>니트/스웨터","id":"50000831","name":"니트/스웨터","last":true},{"wholeCategoryName":"패션의류>남성의류>티셔츠","id":"50000830","name":"티셔츠","last":true},{"wholeCategoryName":"패션의류>남성의류>셔츠/남방","id":"50000833","name":"셔츠/남방","last":true},{"wholeCategoryName":"패션의류>남성의류>카디건","id":"50000832","name":"카디건","last":true},{"wholeCategoryName":"패션의류>남성의류>점퍼","id":"50000837","name":"점퍼","last":true},{"wholeCategoryName":"패션의류>남성의류>재킷","id":"50000838","name":"재킷","last":true},{"wholeCategoryName":"패션의류>남성의류>코트","id":"50000839","name":"코트","last":true},{"wholeCategoryName":"패션의류>남성의류>청바지","id":"50000835","name":"청바지","last":true},{"wholeCategoryName":"패션의류>남성의류>바지","id":"50000836","name":"바지","last":true},{"wholeCategoryName":"패션의류>남성의류>조끼","id":"50000834","name":"조끼","last":true},{"wholeCategoryName":"패션의류>남성의류>정장세트","id":"50000840","name":"정장세트","last":true},{"wholeCategoryName":"패션의류>남성의류>트레이닝복","id":"50000841","name":"트레이닝복","last":true},{"wholeCategoryName":"패션의류>남성의류>한복","id":"50000842","name":"한복","last":true},{"wholeCategoryName":"패션의류>남성의류>유니폼/단체복","id":"50000843","name":"유니폼/단체복","last":true},{"wholeCategoryName":"패션의류>남성의류>레인코트","id":"50000844","name":"레인코트","last":true},{"wholeCategoryName":"패션의류>남성의류>코디세트","id":"50006328","name":"코디세트","last":true},{"wholeCategoryName":"패션의류>남성의류>점프슈트","id":"50008960","name":"점프슈트","last":true},{"wholeCategoryName":"패션의류>남성언더웨어/잠옷","id":"50000170","name":"남성언더웨어/잠옷","last":false},{"wholeCategoryName":"패션의류>남성언더웨어/잠옷>팬티","id":"50000845","name":"팬티","last":true},{"wholeCategoryName":"패션의류>남성언더웨어/잠옷>러닝","id":"50000846","name":"러닝","last":true},{"wholeCategoryName":"패션의류>남성언더웨어/잠옷>러닝팬티세트","id":"50000847","name":"러닝팬티세트","last":true},{"wholeCategoryName":"패션의류>남성언더웨어/잠옷>잠옷/홈웨어","id":"50000848","name":"잠옷/홈웨어","last":true},{"wholeCategoryName":"패션의류>남성언더웨어/잠옷>시즌성내의","id":"50001456","name":"시즌성내의","last":false},{"wholeCategoryName":"패션의류>남성언더웨어/잠옷>시즌성내의>내복","id":"50003808","name":"내복","last":true},{"wholeCategoryName":"패션의류>남성언더웨어/잠옷>시즌성내의>모시메리","id":"50003810","name":"모시메리","last":true},{"wholeCategoryName":"패션의류>남성언더웨어/잠옷>보정속옷","id":"50001455","name":"보정속옷","last":false},{"wholeCategoryName":"패션의류>남성언더웨어/잠옷>보정속옷>보정상의","id":"50003804","name":"보정상의","last":true},{"wholeCategoryName":"패션의류>남성언더웨어/잠옷>보정속옷>보정하의","id":"50003805","name":"보정하의","last":true},{"wholeCategoryName":"패션의류>남성언더웨어/잠옷>보정속옷>복대","id":"50003807","name":"복대","last":true},{"wholeCategoryName":"패션잡화","id":"50000001","name":"패션잡화","last":false},{"wholeCategoryName":"패션잡화>여성신발","id":"50000173","name":"여성신발","last":false},{"wholeCategoryName":"패션잡화>여성신발>부츠","id":"50001462","name":"부츠","last":false},{"wholeCategoryName":"패션잡화>여성신발>부츠>롱부츠","id":"50003834","name":"롱부츠","last":true},{"wholeCategoryName":"패션잡화>여성신발>부츠>미들부츠","id":"50004190","name":"미들부츠","last":true},{"wholeCategoryName":"패션잡화>여성신발>부츠>앵클/숏부츠","id":"50004191","name":"앵클/숏부츠","last":true},{"wholeCategoryName":"패션잡화>여성신발>부티","id":"50000779","name":"부티","last":true},{"wholeCategoryName":"패션잡화>여성신발>워커","id":"50001461","name":"워커","last":false},{"wholeCategoryName":"패션잡화>여성신발>워커>플랫워커","id":"50003832","name":"플랫워커","last":true},{"wholeCategoryName":"패션잡화>여성신발>워커>워커힐","id":"50003833","name":"워커힐","last":true},{"wholeCategoryName":"패션잡화>여성신발>단화","id":"50001459","name":"단화","last":false},{"wholeCategoryName":"패션잡화>여성신발>단화>플랫","id":"50003817","name":"플랫","last":true},{"wholeCategoryName":"패션잡화>여성신발>단화>로퍼","id":"50003818","name":"로퍼","last":true},{"wholeCategoryName":"패션잡화>여성신발>단화>옥스퍼드화","id":"50003819","name":"옥스퍼드화","last":true},{"wholeCategoryName":"패션잡화>여성신발>단화>모카신/털신","id":"50003820","name":"모카신/털신","last":true},{"wholeCategoryName":"패션잡화>여성신발>단화>슬립온","id":"50003821","name":"슬립온","last":true},{"wholeCategoryName":"패션잡화>여성신발>단화>스니커즈","id":"50003822","name":"스니커즈","last":true},{"wholeCategoryName":"패션잡화>여성신발>힐/펌프스","id":"50001460","name":"힐/펌프스","last":false},{"wholeCategoryName":"패션잡화>여성신발>힐/펌프스>하이힐","id":"50003823","name":"하이힐","last":true},{"wholeCategoryName":"패션잡화>여성신발>힐/펌프스>가보시힐","id":"50003824","name":"가보시힐","last":true},{"wholeCategoryName":"패션잡화>여성신발>힐/펌프스>스트랩힐","id":"50003825","name":"스트랩힐","last":true},{"wholeCategoryName":"패션잡화>여성신발>힐/펌프스>슬링백힐","id":"50003826","name":"슬링백힐","last":true},{"wholeCategoryName":"패션잡화>여성신발>힐/펌프스>웨지힐","id":"50003827","name":"웨지힐","last":true},{"wholeCategoryName":"패션잡화>여성신발>힐/펌프스>토오픈힐","id":"50003828","name":"토오픈힐","last":true},{"wholeCategoryName":"패션잡화>여성신발>힐/펌프스>통굽힐","id":"50003829","name":"통굽힐","last":true},{"wholeCategoryName":"패션잡화>여성신발>힐/펌프스>펌프스","id":"50003830","name":"펌프스","last":true},{"wholeCategoryName":"패션잡화>여성신발>힐/펌프스>웨딩슈즈","id":"50003831","name":"웨딩슈즈","last":true},{"wholeCategoryName":"패션잡화>여성신발>운동화","id":"50001463","name":"운동화","last":false},{"wholeCategoryName":"패션잡화>여성신발>운동화>러닝화","id":"50003835","name":"러닝화","last":true},{"wholeCategoryName":"패션잡화>여성신발>운동화>보드화","id":"50003836","name":"보드화","last":true},{"wholeCategoryName":"패션잡화>여성신발>운동화>하이탑","id":"50003837","name":"하이탑","last":true},{"wholeCategoryName":"패션잡화>여성신발>운동화>아쿠아슈즈","id":"50003838","name":"아쿠아슈즈","last":true},{"wholeCategoryName":"패션잡화>여성신발>운동화>워킹화","id":"50003839","name":"워킹화","last":true},{"wholeCategoryName":"패션잡화>여성신발>운동화>캔버스화","id":"50003840","name":"캔버스화","last":true},{"wholeCategoryName":"패션잡화>여성신발>실내화","id":"50000781","name":"실내화","last":true},{"wholeCategoryName":"패션잡화>여성신발>슬리퍼","id":"50000780","name":"슬리퍼","last":true},{"wholeCategoryName":"패션잡화>여성신발>샌들","id":"50001464","name":"샌들","last":false},{"wholeCategoryName":"패션잡화>여성신발>샌들>슬링백샌들","id":"50003841","name":"슬링백샌들","last":true},{"wholeCategoryName":"패션잡화>여성신발>샌들>스트랩샌들","id":"50003842","name":"스트랩샌들","last":true},{"wholeCategoryName":"패션잡화>여성신발>샌들>웨지힐샌들","id":"50003843","name":"웨지힐샌들","last":true},{"wholeCategoryName":"패션잡화>여성신발>샌들>글래디에이터샌들","id":"50003844","name":"글래디에이터샌들","last":true}]');
+
+document.addEventListener("DOMContentLoaded", () => {
+
+	// depth 추가
+	jsonData.forEach(v => {
+		v.depth = v.wholeCategoryName.split(">").length;
+	});
+
+	// 초기 설정
+	init();
+
+	// 카테고리 변경 시
+	document.getElementsByName('category').forEach(elem =>
+		elem.addEventListener('change', (e) => {
+			let target = e.currentTarget;
+
+			let value = target.value;
+			if (!value) return;
+
+			// 2~4분류 하위값들 선택시 option 제거
+			if (target.firstChild.value == '') {
+				target.options[0].remove();
+			}
+
+			let depth = Number(target.id.at(target.id.length - 1));
+			setCategory(depth + 1);
+		})
+	);
+});
+
+function init() {
+	setCategory(1);
+	setCategory(2);
+	document.getElementById('category3').style.display = 'none';
+	document.getElementById('category4').style.display = 'none';
+}
+
+function setCategory(depth) {
+	let data = jsonData.filter(v => {
+		if (depth == 1) {
+			return v.depth == depth;
+		} else {
+
+			/**
+			 * 패션의류>2분류인 상태에서 여성의류를 선택한다면?
+			 * 패션의류>여성의류로 시작하는 3분류 카테고리들이 보여아함
+			 * 3분류 카테고리 : 패션의류>여성의류>니트/스웨터,카디건,원피스,티셔츠... (O)
+			 * 								 패션잡화>여성신발>샌들,슬리퍼... (X)
+			 * 								 ... (X)
+			 */
+
+			// 1. depth 3인 카테고리들 필터링
+			if (v.depth != depth) {
+				return false;
+			}
+
+			// 2. depth 2가 여성의류인것만 필터링
+			// 패션의류>여성의류>니트/스웨터,카디건,원피스,티셔츠...
+			let filteredCategory = v.wholeCategoryName.split(">")[depth - 1 - 1];
+			let element = document.getElementById(`category${depth - 1}`);
+			let currentCategory = element.options[element.selectedIndex].text;
+
+			return filteredCategory == currentCategory;
+		}
+	});
+
+	if (!data.length) {
+		document.getElementById(`category${depth}`).style.display = 'none';
+		return;
+	}
+
+	let opt = "";
+	if (depth > 1) {
+		opt += `<option value="">${depth}분류</option>`;
+	}
+
+	data.forEach(v => {
+		opt += `<option value="${v.id}">${v.name}</option>`;
+	});
+	document.getElementById(`category${depth}`).innerHTML = opt;
+
+	for (let i = 1; i <= 4; i++) {
+		if (depth >= i) {
+			document.getElementById(`category${i}`).style.display = '';
+		} else {
+			document.getElementById(`category${i}`).style.display = 'none';
+		}
+	}
+
+}
+</script>
+<style>
+select {
+	width: 200px;
+	height: 50px;
+	font-size: 20px;
+
+	font-weight: bold;
+}
+
+#category1 {
+	color: tomato;
+}
+
+#category2 {
+	color: lightseagreen;
+}
+
+#category3 {
+	color: tan;
+}
+
+#category4 {
+	color: olive;
+}
+</style>
